@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="angular.min.js">
+</script>
+</head>
+<body ng-App="">
+<input type="number" ng-model="value"/>
+<br>
+value:{{value|number:2}}
+<br>
+<input type="date" ng-model="joinDate"/>
+value:{{joinDate|date:"dd.MM.yy"}}
+<br>
+<br>
+<input type="number" ng-model="amount"/>
+value:{{amount|currency:'&#8377;'}}
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+AngularJS Custom Filter Example
+</title>
+<script src="angular.min.js"></script>
+<script>
+var app=angular.module('customFilterApp',[])
+app.controller('customFilterController',function($scope){
+  $scope.value=5;
+})
+app.filter('convertFactorial',function(){
+return function(item){
+var fact=1;
+for(var i=item;i>0;i--)
+{
+	fact=fact*i;
+}
+return fact;
+}
+
+});
+</script>
+</head>
+
+<body ng-App="customFilterApp" ng-controller="customFilterController">
+<p> factorial:{{value|convertFactorial}} </p>
+</body>
+</html>

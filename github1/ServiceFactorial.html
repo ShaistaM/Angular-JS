@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+AngularJS Service example
+</title>
+<script src="angular.min.js"></script>
+<script>
+var app=angular.module('angularCustomApp',[]);
+app.controller('customCtrl',function($scope,CalcService){
+$scope.factorial=function(){
+return CalcService.factorial($scope.value)
+}
+})
+
+app.service('CalcService',function(){
+this.factorial=function(a){
+	var fact=1;
+	for(var i=1;i<=a;i++){
+	fact*=i;
+}
+return fact;
+}
+})
+
+</script>
+</head>
+<body ng-app="angularCustomApp"  ng-controller="customCtrl">
+Enter a number:<input type="number" ng-model="value"/>
+<p> Factorial:{{factorial()}}</p>
+</body>
+</head>
+</html>

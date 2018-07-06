@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="angular.min.js">
+</script>
+</head>
+<body ng-App="" ng-init="Employees=[{empid:'E001',empName:'Ram'},{empid:'E002',empName:'Raj'},
+                                    {empid:'E003',empName:'Rahul'}]" />
+   <div ng-repeat=" emp in Employees|orderBy:empName:true">
+   {{emp}}
+   </div>
+   
+
+</body>
+</html>

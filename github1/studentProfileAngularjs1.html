@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="angular.min.js">
+</script>
+</head>
+<body>
+<div ng-App="studentApp" ng-controller="studentController">
+<table border="1">
+<tr>
+<th>Student Name</th>
+<th>Subjects</th>
+</tr>
+<tr>
+<td>{{student[0].name}}</td>
+<td>{{student[0].Subjects.name+', marks:'+Subjects.marks}}</td>
+
+</tr>
+<tr>
+<td>{{student[1].name}}</td>
+<td>{{student[1].Subjects.name+', marks:'+Subjects.marks}}</td>
+</tr>
+<tr>
+<td>{{student[2].name}}</td>
+<td>{{student[2].Subjects.name+', marks:'+Subjects.marks}}</td>
+</tr>
+</table>
+<p>Total:{{student.Total()}}</p>
+<p>Average:{{student.Average() | number:2}}</p>
+</div>
+<script>
+var app=angular.module("studentApp",[])
+app.controller("studentController",function($scope){
+$scope.student=[{name:'Ramya',Subjects:[{name:'CoreJava',marks:70},{name:'Servlets',marks:80},
+		   		                         {name:'SpringMVC',marks:85}]
+		   		                     },
+
+				{name:'sheena',Subjects:[{name:'Corejava',marks:80},{name:'Servlets',marks:80},
+										{name:'SpringMVC',marks:95}]},
+
+				{name:'Razak',Subjects:[{name:'Corejava',marks:75},{name:'Servlets',marks:85},
+										{name:'SpringMVC',marks:95}]}
+										]
+
+
+
+Total:function()
+{
+  var sum=0
+  for(var i=0;i<$scope.student.Subjects.length;i++)
+  {
+  	sum=sum+$scope.student.Subjects[i].marks
+  }
+  return sum;
+}
+
+Average:function()
+{
+	return $scope.student.Total()/$scope.student.Subjects.length
+
+	}
+  }
+})															
+</script>
+</body>
+</html>

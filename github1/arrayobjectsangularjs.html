@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="angular.min.js">
+</script>
+</head>
+<body ng-App="" ng-init="Employees=[{empid:'E001',empName:'Ram'},{empid:'E002',empName:'Raj'},
+                                    {empid:'E003',empName:'Rahul'}]" />
+   
+Employee1:{{Employees[0].empid}},{{Employees[0].empName}}</br>
+Employee2:{{Employees[1].empid}},{{Employees[0].empName}}</br>
+Employee3:{{Employees[2].empid}},{{Employees[0].empName}}
+
+</br>
+</br>
+   <table>
+   <tr>
+   		<th>Employee ID </th>
+   		<th>Employee Name </th>
+   </tr>
+
+   <tr>
+   		<td>{{Employees[0].empid}} </td>
+   		 <td>{{Employees[0].empName}} </td>
+    </tr>
+
+    <tr>
+    		<td>{{Employees[1].empid}} </td>
+    		<td>{{Employees[1].empName}} </td>
+    </tr>
+           
+    
+     <tr>
+    		<td>{{Employees[2].empid}} </td>
+    		<td>{{Employees[2].empName}} </td>
+    </tr> 
+    </table>
+  
+  </br>
+</br>
+
+    <table>
+     <tr>
+   		<th>Employee ID </th>
+   		<th>Employee Name </th>
+   </tr>
+
+     <tr ng-repeat="Employee in Employees">
+   		<td>{{Employee.empid}} </td>
+   		 <td>{{Employee.empName}} </td>
+    </tr>                           
+   </table>
+ </body>
+ </html>                                   
